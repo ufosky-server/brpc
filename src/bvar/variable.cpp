@@ -596,7 +596,7 @@ public:
                            << "', " << error;
                 return false;
             }
-            _fp = fopen(_filename.c_str(), "w");
+            _fp = fopen(_filename.c_str(), "a");
             if (NULL == _fp) {
                 LOG(ERROR) << "Fail to open " << _filename;
                 return false;
