@@ -49,7 +49,7 @@ void thread_func() {
 int main(int argc, char *argv[]) {
   GFLAGS_NS::ParseCommandLineFlags(&argc, &argv, true);
 
-  if (GFLAGS_NS::SetCommandLineOption("ump_dump", "true").empty()) {
+  if (GFLAGS_NS::SetCommandLineOption("bvar_dump", "true").empty()) {
     std::cout << "Fail to enable ump dump" << std::endl;
   }
 

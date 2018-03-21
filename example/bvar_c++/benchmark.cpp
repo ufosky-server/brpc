@@ -56,7 +56,9 @@ int main(int argc, char *argv[]) {
   for (int i = 0; i < FLAGS_key_count; ++i) {
     std::stringstream ss;
     ss << "func" << std::setw(4) << std::setfill('0') << i;
-    funcs_count.emplace(std::make_pair(ss.str(), std::unique_ptr<bvar::Adder<int64_t>>(new bvar::Adder<int64_t>{})));
+    auto ptr = std::unique_ptr<bvar::Adder<int64_t>>(new bvar::Adder<int64_t>{});
+    ptr->expose(ss.str().c_str());
+    funcs_count.emplace(std::make_pair(ss.str(), std::move(ptr)));
   }
   std::vector<std::thread> threads;
   for (int i = 0; i < FLAGS_thread_count; ++i) {
