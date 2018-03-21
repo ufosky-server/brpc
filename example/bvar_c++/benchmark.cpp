@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <sstream>
 #include <unordered_map>
+#include <functional>
 
 DEFINE_int32(thread_count, 1, "Thread count.");
 DEFINE_int32(key_count, 100, "Unique key count.");
