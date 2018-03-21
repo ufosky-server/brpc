@@ -25,7 +25,7 @@ add_library(bvar-static STATIC $<TARGET_OBJECTS:BVAR_LIB>)
 
 target_link_libraries(brpc-shared ${DYNAMIC_LIB})
 
-if(WITH_GLOG)
+if(BRPC_WITH_GLOG)
     target_link_libraries(brpc-shared ${GLOG_LIB})
 endif()
 
