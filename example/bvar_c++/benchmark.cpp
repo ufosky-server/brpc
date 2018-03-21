@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
   GFLAGS_NS::ParseCommandLineFlags(&argc, &argv, true);
 
   if (GFLAGS_NS::SetCommandLineOption("bvar_dump", "true").empty()) {
-    std::cout << "Fail to enable ump dump" << std::endl;
+    std::cout << "Fail to enable bvar dump" << std::endl;
   }
 
   std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
